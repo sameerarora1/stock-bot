@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Analysis Report</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <h1>Stock Analysis Report</h1>
+    </header>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>StockBot</h2>
+        </div>
+        <div class="chat-box">
+            <div class="bot-message">
+                <p>Hello, I am the StockBot! Which company can I help you analyze? Please enter a valid stock ticker.</p>
+            </div>
+        </div>
+        <div class="chat-area" id="chat-area">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="user-input">
+            <form action="/getStock" method="post">
+                <input type="text" id="stockSymbol" name="stockSymbol" placeholder="Enter a ticker...">
+                <button id="send-button" class="submit-button" type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="info-container">
+        <p class="stock-data" th:utext="${stockData}"></p>
+        <!-- Information will be printed here -->
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Stock Bot Analysis</p>
+    </footer>
+</body>
+</html>
