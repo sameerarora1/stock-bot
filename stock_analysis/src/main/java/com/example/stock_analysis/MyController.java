@@ -12,7 +12,7 @@ public class MyController {
     @GetMapping("/")
     public String showOutput(Model model) {
         model.addAttribute("stockData", "");
-        return "output";
+        return "index";
     }
 
     @PostMapping("/getStock")
@@ -28,6 +28,6 @@ public class MyController {
         }
         output = stockAnalysis.getOutput();
         model.addAttribute("stockData", output);
-        return "output";
+        return "index";
     }
 }
